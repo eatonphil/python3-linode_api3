@@ -168,13 +168,57 @@ linode.resize = linode_resize
 
 linode.config = module("linode.config")
 
-def linode_config_create(linode_id, kernel_id, label, disks):
-    return request("linode.config.create", {
+def linode_config_create(linode_id, kernel_id, label, disks, comments=None,
+                         ram_limit=None, virt_mode=None, run_level=None,
+                         root_device=None, helpers=None,
+                         automount_devtmpfs=None, config_id=None):
+    data = {
         "LinodeID": linode_id,
         "KernelID": kernel_id,
         "Label": label,
         "DiskList": disks.join(",")
-    })
+    }
+
+    if config_id:
+        data["ConfigID"] = config_id
+
+    if comments:
+        data["Comments"] = comments
+
+    if ram_limit:
+        data["RAMLimit"] = ram_limit
+
+    if virt_mode:
+        data["virt_mode"] = virt_mode
+
+    if run_level:
+        data["RunLevel"] = run_level
+
+    if root_device:
+        if root_device.get("number"):
+            data["RootDeviceNum"] = root_device["number"]
+        if root_device.get("custom"):
+            data["RootDeviceCustom"] = root_device["custom"]
+        if root_device.get("readonly") is not None:
+            data["RootDeviceRO"] = root_device["readonly"]
+
+    if helpers:
+        if helpers.get("disable_update_db") is not None:
+            data["helper_disableUpdateDB"] = helpers["disable_update_db"]
+        if helpers.get("distro") is not None:
+            data["helper_distro"] = helpers["distro"]
+        if helpers.get("xen") is not None:
+            data["helper_xen"] = helpers["xen"]
+        if helpers.get("depmod") is not None:
+            data["helper_depmod"] = helpers["depmod"]
+        if helpers.get("network") is not None:
+            data["helper_network"] = helpers["network"]
+
+    if automount_devtmpfs is not None:
+        data["devtmpfs_automount"] = automount_devtmpfs
+
+    action = "linode.config.create" if not config_id else "linode.config.update"
+    return request(action, data)
 
 def linode_config_delete(linode_id, config_id):
     return request("linode.config.delete", {
@@ -182,18 +226,135 @@ def linode_config_delete(linode_id, config_id):
         "ConfigID": config_id,
     })
 
+def linode_config_update(linode_id, config_id, *args, **kwargs):
+    return linode_config_create(linode_id, *args, config_id=config_id, **kwargs)
+
+def linode_config_view(linode_id, config_id=None):
+    data = {"LinodeID": linode_id}
+    if config_id:
+        data["ConfigID"] = config_id
+    return request("linode.config.view", data)
+
 linode.config.create = linode_config_create
 linode.config.delete = linode_config_delete
+linode.config.update = linode_config_update
+linode.config.view = linode_config_view
 
 linode.disk = module("linode.disk")
 
-def linode_disk_create(linode_id, label, type, size):
-    return request("linode.disk.create", {
+def linode_disk_create(linode_id, label, kind, size, read_only=None):
+    data = {
         "LinodeID": linode_id,
         "Label": label,
-        "Type": type,
+        "Type": kind,
+        "Size": size,
+    }
+
+    if read_only is not None:
+        data["isReadOnly"] = read_only
+
+    return request("linode.disk.create", data)
+
+def linode_disk_create_from_distribution(linode_id, distribution_id, label,
+                                         size, password, sshKey=None):
+    data = {
+        "LinodeID": linode_id,
+        "DistributionId": distribution_id,
+        "Label": label,
+        "Size": size,
+        "rootPass": password,
+    }
+
+    if sshKey:
+        data["rootSSHKey"] = sshKey
+
+    return request("linode.disk.createFromDistribution", data)
+
+def linode_disk_create_from_image(linode_id, image_id, label=None, size=None,
+                                  password=None, sshKey=None):
+    data = {
+        "LinodeID": linode_id,
+        "ImageId": image_id,
+    }
+
+    if label:
+        data["Label"] = label
+
+    if size:
+        data["Size"] = size
+
+    if password:
+        data["rootPass"] = password
+
+    if sshKey:
+        data["rootSSHKey"] = sshKey
+
+    return request("linode.disk.createfromimage", data)
+
+def linode_disk_create_from_stackscript(linode_id, stackscript_id,
+                                        stackscript_fields, distribution_id,
+                                        label, size, password, sshKey=None):
+    data = {
+        "LinodeID": linode_id,
+        "StackscriptID": stackscript_id,
+        "StackscriptUDFResponses": json.dumps(stackscript_fields),
+        "DistributionId": distribution_id,
+        "Label": label,
+        "Size": size,
+        "rootPass": password,
+    }
+
+    if sshKey:
+        data["rootSSHKey"] = sshKey
+
+    return request("linode.disk.createfromstackscript", data)
+
+def linode_disk_delete(linode_id, disk_id):
+    return request("linode.disk.delete", {
+        "LinodeID": linode_id,
+        "DiskID": disk_id,
+    })
+
+def linode_disk_duplicate(linode_id, disk_id):
+    return request("linode.disk.duplicate", {
+        "LinodeID": linode_id,
+        "DiskID": disk_id,
+    })
+
+def linode_disk_imagize(linode_id, disk_id, label=None, comments=None):
+    data = {
+        "LinodeID": linode_id,
+        "DiskID": disk_id,
+    }
+
+    if label:
+        data["Label"] = label
+
+    if comments:
+        data["Description"] = comments
+
+    return request("linode.disk.imagize", data)
+
+def linode_disk_resize(linode_id, disk_id, size):
+    return request("linode.disk.resize", {
+        "LinodeID": linode_id,
+        "DiskID": disk_id,
         "Size": size,
     })
+
+def linode_disk_update(linode_id, disk_id, label=None, read_only=None):
+    data ={
+        "LinodeID": linode_id,
+        "DiskID": disk_id,
+    }
+
+    if label:
+        data["Label"] = label
+
+    if read_only is not None:
+        data["isReadOnly"] = read_only
+
+    return request("linode.disk.resize", data)
 
 def linode_disk_view(linode_id, disk_id=None):
     data = {"LinodeID": linode_id}
@@ -202,15 +363,16 @@ def linode_disk_view(linode_id, disk_id=None):
 
     return request("linode.disk.list", data)
 
-def linode_disk_delete(linode_id, disk_id):
-    return request("linode.disk.delete", {
-        "LinodeID": linode_id,
-        "DiskID": disk_id,
-    })
-
 linode.disk.create = linode_disk_create
-linode.disk.view = linode_disk_view
+linode.disk.create_from_distribution = linode_disk_create_from_distribution
+linode.disk.create_from_image = linode_disk_create_from_image
+linode.disk.create_from_stackscript = linode_disk_create_from_stackscript
 linode.disk.delete = linode_disk_delete
+linode.disk.duplicate = linode_disk_duplicate
+linode.disk.imagize = linode_disk_imagize
+linode.disk.resize = linode_disk_resize
+linode.disk.update = linode_disk_update
+linode.disk.view = linode_disk_view
 
 linode.ip = module("linode.ip")
 

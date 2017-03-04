@@ -1,7 +1,5 @@
 This is a Linode APIv3 client for Python 3.
 
-Example:
-
 ```python
 from api import linode
 
@@ -13,7 +11,7 @@ for l in linode.view():
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+**Modules and Functions**
 
 - [linode](#linode)
   - [linode.boot()](#linodeboot)
@@ -51,6 +49,13 @@ for l in linode.view():
   - [linode.ip.view()](#linodeipview)
 - [linode.job](#linodejob)
   - [linode.job.view()](#linodejobview)
+- [avail](#avail)
+  - [avail.datacenters()](#availdatacenters)
+  - [avail.distributions()](#availdistributions)
+  - [avail.kernels()](#availkernels)
+  - [avail.linodeplans()](#availlinodeplans)
+  - [avail.nodebalancers()](#availnodebalancers)
+  - [avail.stackscripts()](#availstackscripts)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -358,3 +363,17 @@ linode.view(linode_id=None)
 ## linode.job
 
 ### linode.job.view()
+
+## avail
+
+### avail.datacenters()
+
+### avail.distributions()
+
+### avail.kernels()
+
+### avail.linodeplans()
+
+### avail.nodebalancers()
+
+### avail.stackscripts()
