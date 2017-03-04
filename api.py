@@ -261,3 +261,30 @@ def linode_job_view(linode_id, job_id=None, pending=None):
     return request("linode.job.list", data)
 
 linode.job.view = linode_job_view
+
+avail = module('avail')
+
+def avail_datacenters():
+    return request("avail.datacenters")
+
+def avail_distributions():
+    return request("avail.distributions")
+
+def avail_kernels():
+    return request("avail.kernels")
+
+def avail_linodeplans():
+    return request("avail.linodeplans")
+
+def avail_nodebalancers():
+    return request("avail.nodebalancers")
+
+def avail_stackscripts():
+    return request("avail.stackscripts")
+
+avail.datacenters = avail_datacenters
+avail.distributions = avail_distributions
+avail.kernels = avail_kernels
+avail.linodeplans = avail_linodeplans
+avail.nodebalancers = avail_nodebalancers
+avail.stackscripts = avail_stackscripts
