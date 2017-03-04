@@ -1,3 +1,50 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [python-linode-apiv3](#python-linode-apiv3)
+  - [Example](#example)
+  - [API](#api)
+    - [linode](#linode)
+      - [linode.boot()](#linodeboot)
+        - [Input](#input)
+        - [Output](#output)
+      - [linode.clone()](#linodeclone)
+        - [Input](#input-1)
+        - [Output](#output-1)
+      - [linode.create()](#linodecreate)
+        - [Input](#input-2)
+        - [Output](#output-2)
+      - [linode.delete()](#linodedelete)
+        - [Input](#input-3)
+        - [Output](#output-3)
+      - [linode.kvmify()](#linodekvmify)
+        - [Input](#input-4)
+      - [linode.mutate()](#linodemutate)
+        - [Input](#input-5)
+      - [linode.reboot()](#linodereboot)
+        - [Input](#input-6)
+        - [Output](#output-4)
+      - [linode.resize()](#linoderesize)
+        - [Input](#input-7)
+      - [linode.shutdown()](#linodeshutdown)
+        - [Input](#input-8)
+        - [Output](#output-5)
+      - [linode.update()](#linodeupdate)
+        - [Input](#input-9)
+          - [Alert](#alert)
+          - [AlertOptions](#alertoptions)
+          - [Backup](#backup)
+          - [Ssh](#ssh)
+        - [Output](#output-6)
+      - [linode.view()](#linodeview)
+        - [Input](#input-10)
+        - [Output (list)](#output-list)
+    - [linode.config](#linodeconfig)
+      - [linode.config.create()](#linodeconfigcreate)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # python-linode-apiv3
 
 This is a Linode APIv3 client for Python 3.
@@ -77,6 +124,99 @@ linode.create(datacenter_id, plan_id, payment_term=None)
 | --------- | ------ |
 | linodeid  | number |
 
+#### linode.delete()
+
+```python
+linode.delete(linode_id, skip_checks=None)
+```
+
+##### Input
+
+| Key           | Type    |
+| ------------- | ------- |
+| linode_id     | number  |
+| skip_checks   | boolean |
+
+##### Output
+
+| Key       | Type   |
+| --------- | ------ |
+| linodeid  | number |
+
+#### linode.kvmify()
+
+```python
+linode.kvmify(linode_id)
+```
+
+##### Input
+
+| Key           | Type    |
+| ------------- | ------- |
+| linode_id     | number  |
+
+#### linode.mutate()
+
+```python
+linode.mutate(linode_id)
+```
+
+##### Input
+
+| Key           | Type    |
+| ------------- | ------- |
+| linode_id     | number  |
+
+#### linode.reboot()
+
+```python
+linode.reboot(linode_id, config_id=None)
+```
+
+##### Input
+
+| Key       | Type   |
+| --------- | ------ |
+| linode_id | number |
+| config_id | number |
+
+##### Output
+
+| Key   | Type   |
+| ----- | ------ |
+| jobid | number |
+
+#### linode.resize()
+
+```python
+linode.resize(linode_id, plan_id)
+```
+
+##### Input
+
+| Key       | Type   |
+| --------- | ------ |
+| linode_id | number |
+| plan_id   | number |
+
+#### linode.shutdown()
+
+```python
+linode.shutdown(linode_id)
+```
+
+##### Input
+
+| Key       | Type   |
+| --------- | ------ |
+| linode_id | number |
+
+##### Output
+
+| Key   | Type   |
+| ----- | ------ |
+| jobid | number |
+
 #### linode.update()
 
 ```python
@@ -130,6 +270,11 @@ linode.update(linode_id, label=None, group=None, alerts=None, backups=None, watc
 
 ##### Output
 
+| Key      | Type   |
+| -------- | ------ |
+| linodeid | number |
+
+
 #### linode.view()
 
 ```python
@@ -138,9 +283,9 @@ linode.view(linode_id=None)
 
 ##### Input
 
-| Key   | Type   |
-| ----- | ------ |
-| jobid | number |
+| Key       | Type   |
+| --------- | ------ |
+| linode_id | number |
 
 ##### Output (list)
 
@@ -173,3 +318,51 @@ linode.view(linode_id=None)
 | totalram                | number  |
 | totalxfer               | number  |
 | watchdog                | boolean |
+
+### linode.config
+
+#### linode.config.create()
+
+#### linode.config.delete()
+
+#### linode.config.update()
+
+#### linode.config.view()
+
+### linode.disk
+
+#### linode.disk.create()
+
+#### linode.disk.createfromdistribution()
+
+#### linode.disk.createfromimage()
+
+#### linode.disk.createfromstackscript()
+
+#### linode.disk.delete()
+
+#### linode.disk.duplicate()
+
+#### linode.disk.imagize()
+
+#### linode.disk.resize()
+
+#### linode.disk.update()
+
+#### linode.disk.view()
+
+### linode.ip
+
+#### linode.ip.addprivate()
+
+#### linode.ip.addpublic()
+
+#### linode.ip.setrdns()
+
+#### linode.ip.swap()
+
+#### linode.ip.view()
+
+### linode.job
+
+#### linode.job.view()
