@@ -32,9 +32,9 @@ for l in linode.view():
   - [linode.config.view()](#linodeconfigview)
 - [linode.disk](#linodedisk)
   - [linode.disk.create()](#linodediskcreate)
-  - [linode.disk.createfromdistribution()](#linodediskcreatefromdistribution)
-  - [linode.disk.createfromimage()](#linodediskcreatefromimage)
-  - [linode.disk.createfromstackscript()](#linodediskcreatefromstackscript)
+  - [linode.disk.create_from_distribution()](#linodediskcreate_from_distribution)
+  - [linode.disk.create_from_image()](#linodediskcreate_from_image)
+  - [linode.disk.create_from_stackscript()](#linodediskcreate_from_stackscript)
   - [linode.disk.delete()](#linodediskdelete)
   - [linode.disk.duplicate()](#linodediskduplicate)
   - [linode.disk.imagize()](#linodediskimagize)
@@ -330,11 +330,11 @@ linode.view(linode_id=None)
 
 ### linode.disk.create()
 
-### linode.disk.createfromdistribution()
+### linode.disk.create_from_distribution()
 
-### linode.disk.createfromimage()
+### linode.disk.create_from_image()
 
-### linode.disk.createfromstackscript()
+### linode.disk.create_from_stackscript()
 
 ### linode.disk.delete()
 
