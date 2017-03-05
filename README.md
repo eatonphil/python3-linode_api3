@@ -67,6 +67,9 @@ for l in linode.view():
 linode.boot(linode_id, config_id=None)
 ```
 
+External references:
+* [Official API Docs: linode.boot](https://www.linode.com/api/linode/linode.boot)
+
 #### Input
 
 | Key       | Type   |
@@ -85,6 +88,9 @@ linode.boot(linode_id, config_id=None)
 ```python
 linode.clone(linode_id, datacenter_id, plan_id, payment_term=None)
 ```
+
+External references:
+* [Official API Docs: linode.clone](https://www.linode.com/api/linode/linode.clone)
 
 #### Input
 
@@ -107,6 +113,9 @@ linode.clone(linode_id, datacenter_id, plan_id, payment_term=None)
 linode.create(datacenter_id, plan_id, payment_term=None)
 ```
 
+External references:
+* [Official API Docs: linode.create](https://www.linode.com/api/linode/linode.create)
+
 #### Input
 
 | Key           | Type   |
@@ -127,6 +136,9 @@ linode.create(datacenter_id, plan_id, payment_term=None)
 linode.delete(linode_id, skip_checks=None)
 ```
 
+External references:
+* [Official API Docs: linode.delete](https://www.linode.com/api/linode/linode.delete)
+
 #### Input
 
 | Key           | Type    |
@@ -146,6 +158,9 @@ linode.delete(linode_id, skip_checks=None)
 linode.kvmify(linode_id)
 ```
 
+External references:
+* [Official API Docs: linode.kvmify](https://www.linode.com/api/linode/linode.kvmify)
+
 #### Input
 
 | Key           | Type    |
@@ -158,6 +173,9 @@ linode.kvmify(linode_id)
 linode.mutate(linode_id)
 ```
 
+External references:
+* [Official API Docs: linode.mutate](https://www.linode.com/api/linode/linode.mutate)
+
 #### Input
 
 | Key           | Type    |
@@ -169,6 +187,9 @@ linode.mutate(linode_id)
 ```python
 linode.reboot(linode_id, config_id=None)
 ```
+
+External references:
+* [Official API Docs: linode.reboot](https://www.linode.com/api/linode/linode.reboot)
 
 #### Input
 
@@ -189,6 +210,9 @@ linode.reboot(linode_id, config_id=None)
 linode.resize(linode_id, plan_id)
 ```
 
+External references:
+* [Official API Docs: linode.resize](https://www.linode.com/api/linode/linode.resize)
+
 #### Input
 
 | Key       | Type   |
@@ -201,6 +225,9 @@ linode.resize(linode_id, plan_id)
 ```python
 linode.shutdown(linode_id)
 ```
+
+External references:
+* [Official API Docs: linode.shutdown](https://www.linode.com/api/linode/linode.shutdown)
 
 #### Input
 
@@ -219,6 +246,9 @@ linode.shutdown(linode_id)
 ```python
 linode.update(linode_id, label=None, group=None, alerts=None, backups=None, watchdog=None, ssh=None)
 ```
+
+External references:
+* [Official API Docs: linode.update](https://www.linode.com/api/linode/linode.update)
 
 #### Input
 
@@ -278,6 +308,9 @@ linode.update(linode_id, label=None, group=None, alerts=None, backups=None, watc
 linode.view(linode_id=None)
 ```
 
+External references:
+* [Official API Docs: linode.list](https://www.linode.com/api/linode/linode.list)
+
 #### Input
 
 | Key       | Type   |
@@ -326,6 +359,9 @@ linode.config.create(linode_id, kernel_id, label, disks, comments=None,
                      root_device=None, helpers=None, automount_devtmpfs=None)
 ```
 
+External references:
+* [Official API Docs: linode.config.create](https://www.linode.com/api/linode/linode.config.create)
+
 #### Input
 
 | Key                | Type       |
@@ -371,6 +407,9 @@ linode.config.create(linode_id, kernel_id, label, disks, comments=None,
 linode.delete(linode_id, config_id)
 ```
 
+External references:
+* [Official API Docs: linode.config.delete](https://www.linode.com/api/linode/linode.config.delete)
+
 #### Input
 
 | Key       | Type   |
@@ -392,6 +431,9 @@ linode.config.update(linode_id, config_id, kernel_id, label, disks,
                      run_level=None, root_device=None, helpers=None,
                      automount_devtmpfs=None)
 ```
+
+External references:
+* [Official API Docs: linode.config.update](https://www.linode.com/api/linode/linode.config.update)
 
 #### Input
 
@@ -439,6 +481,9 @@ linode.config.update(linode_id, config_id, kernel_id, label, disks,
 linode.config.view(linode_id, config_id=None)
 ```
 
+External references:
+* [Official API Docs: linode.config.list](https://www.linode.com/api/linode/linode.config.list)
+
 #### Input
 
 | Key       | Type   |
@@ -475,50 +520,204 @@ linode.config.view(linode_id, config_id=None)
 
 ### linode.disk.create()
 
+```python
+linode.disk.create(linode_id, label, kind, size, read_only=None)
+```
+
+External references:
+* [Official API Docs: linode.disk.create](https://www.linode.com/api/linode/linode.disk.create)
+
 ### linode.disk.create_from_distribution()
+
+```python
+linode.disk.create_from_distribution(linode_id, distribution_id, label, size, password, sshKey=None)
+```
+
+External references:
+* [Official API Docs: linode.disk.createfromdistribution](https://www.linode.com/api/linode/linode.disk.createfromdistribution)
 
 ### linode.disk.create_from_image()
 
+```python
+linode.disk.create_from_image(linode_id, image_id, label=None, size=None, password=None, sshKey=None)
+```
+
+External references:
+* [Official API Docs: linode.disk.createfromimage](https://www.linode.com/api/linode/linode.disk.createfromimage)
+
 ### linode.disk.create_from_stackscript()
+
+```python
+linode.disk.create_from_stackscript(linode_id, stackscript_id, stackscript_fields, distribution_id, label, size, password, sshKey=None)
+```
+
+External references:
+* [Official API Docs: linode.disk.createfromstackscript](https://www.linode.com/api/linode/linode.disk.createfromstackscript)
 
 ### linode.disk.delete()
 
+```python
+linode.disk.delete(linode_id, disk_id)
+```
+
+External references:
+* [Official API Docs: linode.disk.delete](https://www.linode.com/api/linode/linode.disk.delete)
+
 ### linode.disk.duplicate()
+
+```python
+linode.disk.duplicate(linode_id, disk_id)
+```
+
+External references:
+* [Official API Docs: linode.disk.duplicate](https://www.linode.com/api/linode/linode.disk.duplicate)
 
 ### linode.disk.imagize()
 
+```python
+linode.disk.imagize(linode_id, disk_id, label=None, comments=None)
+```
+
+External references:
+* [Official API Docs: linode.disk.imagize](https://www.linode.com/api/linode/linode.disk.imagize)
+
 ### linode.disk.resize()
+
+```python
+linode.disk.resize(linode_id, disk_id, size)
+```
+
+External references:
+* [Official API Docs: linode.disk.resize](https://www.linode.com/api/linode/linode.disk.resize)
 
 ### linode.disk.update()
 
+```python
+linode.disk.update(linode_id, disk_id, label=None, read_only=None)
+```
+
+External references:
+* [Official API Docs: linode.disk.update](https://www.linode.com/api/linode/linode.disk.update)
+
 ### linode.disk.view()
+
+```python
+linode.disk.view(linode_id, disk_id=None)
+```
+
+External references:
+* [Official API Docs: linode.disk.list](https://www.linode.com/api/linode/linode.disk.list)
 
 ## linode.ip
 
 ### linode.ip.addprivate()
 
+```python
+linode.ip.addprivate(linode_id)
+```
+
+External references:
+* [Official API Docs: linode.ip.addprivate](https://www.linode.com/api/linode/linode.ip.addprivate)
+
 ### linode.ip.addpublic()
+
+```python
+linode.ip.addpublic(linode_id)
+```
+
+External references:
+* [Official API Docs: linode.ip.addpublic](https://www.linode.com/api/linode/linode.ip.addpublic)
 
 ### linode.ip.setrdns()
 
+```python
+linode.ip.setrdns(ip_id, hostname)
+```
+
+External references:
+* [Official API Docs: linode.ip.setrdns](https://www.linode.com/api/linode/linode.ip.setrdns)
+
 ### linode.ip.swap()
 
+```python
+linode.ip.swap(ip_id, ip_id_b=None, linode_id_b=None)
+```
+
+External references:
+* [Official API Docs: linode.ip.swap](https://www.linode.com/api/linode/linode.ip.swap)
+
 ### linode.ip.view()
+
+```python
+linode.ip.view(linode_id, ip_id=None)
+```
+
+External references:
+* [Official API Docs: linode.ip.list](https://www.linode.com/api/linode/linode.ip.list)
 
 ## linode.job
 
 ### linode.job.view()
 
+```python
+linode.job.view(linode_id, job_id=None, pending=None)
+```
+
+External references:
+* [Official API Docs: linode.job.list](https://www.linode.com/api/linode/linode.job.list)
+
 ## avail
 
 ### avail.datacenters()
 
+```python
+linode.avail.datacenters()
+```
+
+External references:
+* [Official API Docs: linode.avail.datacenters](https://www.linode.com/api/linode/linode.avail.datacenters)
+
 ### avail.distributions()
+
+```python
+linode.avail.distributions()
+```
+
+External references:
+* [Official API Docs: linode.avail.distributions](https://www.linode.com/api/linode/linode.avail.distributions)
 
 ### avail.kernels()
 
+```python
+linode.avail.kernels()
+```
+
+External references:
+* [Official API Docs: linode.avail.kernels](https://www.linode.com/api/linode/linode.avail.kernels)
+
 ### avail.linodeplans()
+
+```python
+linode.avail.linodeplans()
+```
+
+External references:
+* [Official API Docs: linode.avail.linodeplans](https://www.linode.com/api/linode/linode.avail.linodeplans)
 
 ### avail.nodebalancers()
 
+```python
+linode.avail.nodebalancers()
+```
+
+External references:
+* [Official API Docs: linode.avail.nodebalancers](https://www.linode.com/api/linode/linode.avail.nodebalancers)
+
 ### avail.stackscripts()
+
+```python
+linode.avail.stackscripts()
+```
+
+External references:
+* [Official API Docs: linode.avail.stackscripts](https://www.linode.com/api/linode/linode.avail.stackscripts)
