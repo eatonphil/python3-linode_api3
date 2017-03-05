@@ -72,14 +72,14 @@ External references:
 
 #### Input
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | linode_id | number |
 | config_id | number |
 
 #### Output
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | jobid     | number |
 
@@ -94,7 +94,7 @@ External references:
 
 #### Input
 
-| Key           | Type   |
+| Field           | Type   |
 | ------------- | ------ |
 | linode_id     | number |
 | datacenter_id | number |
@@ -103,7 +103,7 @@ External references:
 
 #### Output
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | linodeid  | number |
 
@@ -118,7 +118,7 @@ External references:
 
 #### Input
 
-| Key           | Type   |
+| Field           | Type   |
 | ------------- | ------ |
 | datacenter_id | number |
 | plan_id       | number |
@@ -126,7 +126,7 @@ External references:
 
 #### Output
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | linodeid  | number |
 
@@ -141,14 +141,14 @@ External references:
 
 #### Input
 
-| Key           | Type    |
+| Field           | Type    |
 | ------------- | ------- |
 | linode_id     | number  |
 | skip_checks   | boolean |
 
 #### Output
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | linodeid  | number |
 
@@ -163,7 +163,7 @@ External references:
 
 #### Input
 
-| Key           | Type    |
+| Field           | Type    |
 | ------------- | ------- |
 | linode_id     | number  |
 
@@ -178,7 +178,7 @@ External references:
 
 #### Input
 
-| Key           | Type    |
+| Field           | Type    |
 | ------------- | ------- |
 | linode_id     | number  |
 
@@ -193,14 +193,14 @@ External references:
 
 #### Input
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | linode_id | number |
 | config_id | number |
 
 #### Output
 
-| Key   | Type   |
+| Field   | Type   |
 | ----- | ------ |
 | jobid | number |
 
@@ -215,7 +215,7 @@ External references:
 
 #### Input
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | linode_id | number |
 | plan_id   | number |
@@ -231,13 +231,13 @@ External references:
 
 #### Input
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | linode_id | number |
 
 #### Output
 
-| Key   | Type   |
+| Field   | Type   |
 | ----- | ------ |
 | jobid | number |
 
@@ -252,7 +252,7 @@ External references:
 
 #### Input
 
-| Key       | Type    |
+| Field       | Type    |
 | --------- | ------- |
 | linode_id | number  |
 | label     | string  |
@@ -264,7 +264,7 @@ External references:
 
 ##### Alert
 
-| Key             | Type         |
+| Field             | Type         |
 | --------------- | ------------ |
 | cpu             | AlertOptions |
 | diskio          | AlertOptions |
@@ -274,21 +274,21 @@ External references:
 
 ##### AlertOptions
 
-| Key       | Type    |
+| Field       | Type    |
 | --------- | ------- |
 | enabled   | boolean |
 | threshold | number  |
 
 ##### Backup
 
-| Key     | Type   |
+| Field     | Type   |
 | ------- | ------ |
 | window  | number |
 | weekday | number |
 
 ##### Ssh
 
-| Key      | Type    |
+| Field      | Type    |
 | -------- | ------- |
 | disabled | boolean |
 | user     | string  |
@@ -297,7 +297,7 @@ External references:
 
 #### Output
 
-| Key      | Type   |
+| Field      | Type   |
 | -------- | ------ |
 | linodeid | number |
 
@@ -313,13 +313,13 @@ External references:
 
 #### Input
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | linode_id | number |
 
 #### Output (list)
 
-| Key                     | Type    |
+| Field                     | Type    |
 | ----------------------- | ------  |
 | alert_bwin_enabled      | boolean |
 | alert_bwin_threshold    | number  |
@@ -364,7 +364,7 @@ External references:
 
 #### Input
 
-| Key                | Type       |
+| Field                | Type       |
 | -------------------| ---------- |
 | linode_id          | number     |
 | kernel_id          | number     |
@@ -379,7 +379,7 @@ External references:
 
 ##### RootDevice
 
-| Key       | Type    |
+| Field       | Type    |
 | --------- | ------- |
 | number    | number  |
 | custom    | string  |
@@ -387,7 +387,7 @@ External references:
 
 ##### Helpers
 
-| Key               | Type    |
+| Field               | Type    |
 | ----------------- | ------- |
 | disable_update_db | boolean |
 | distro            | boolean |
@@ -397,7 +397,7 @@ External references:
 
 #### Output
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | configid  | number |
 
@@ -412,14 +412,14 @@ External references:
 
 #### Input
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | linode_id | number |
 | config_id | number |
 
 #### Output
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | configid  | number |
 
@@ -437,7 +437,7 @@ External references:
 
 #### Input
 
-| Key                | Type       |
+| Field                | Type       |
 | -------------------| ---------- |
 | linode_id          | number     |
 | config_id          | number     |
@@ -453,7 +453,7 @@ External references:
 
 ##### RootDevice
 
-| Key       | Type    |
+| Field       | Type    |
 | --------- | ------- |
 | number    | number  |
 | custom    | string  |
@@ -461,7 +461,7 @@ External references:
 
 ##### Helpers
 
-| Key               | Type    |
+| Field               | Type    |
 | ----------------- | ------- |
 | disable_update_db | boolean |
 | distro            | boolean |
@@ -471,7 +471,7 @@ External references:
 
 #### Output
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | configid  | number |
 
@@ -486,14 +486,14 @@ External references:
 
 #### Input
 
-| Key       | Type   |
+| Field       | Type   |
 | --------- | ------ |
 | linode_id | number |
 | config_id | number |
 
 #### Output (list)
 
-| Key                    | Type          |
+| Field                    | Type          |
 | ---------------------- | ------------- |
 | rootdevicenum          | number        |
 | rootdevicecustom       | string        |
@@ -677,32 +677,95 @@ avail.datacenters()
 External references:
 * [Official API Docs: utility.avail.datacenters](https://www.linode.com/api/utility/avail.datacenters)
 
+#### Output (list)
+
+| Field        | Type   |
+| ------------ | ------ |
+| location     | string |
+| datacenterid | number |
+| abbr         | string |
+
 ### avail.distributions()
 
 ```python
-avail.distributions()
+avail.distributions(distribution_id=None)
 ```
+
+#### Input
+
+| Field           | Type   |
+| --------------- | ------ |
+| distribution_id | number |
 
 External references:
 * [Official API Docs: utility.avail.distributions](https://www.linode.com/api/utility/avail.distributions)
 
+#### Output (list)
+
+| Field               | Type   |
+| ------------------- | ------ |
+| create_dt           | string |
+| requirespvopskernel | number |
+| label               | string |
+| distributionid      | number |
+| minimagesize        | number |
+| is64bit             | number |
+
 ### avail.kernels()
 
 ```python
-avail.kernels()
+avail.kernels(xen=None, kvm=None)
 ```
 
 External references:
 * [Official API Docs: utility.avail.kernels](https://www.linode.com/api/utility/avail.kernels)
 
+#### Input
+
+| Field | Type    |
+| ----- | ------- |
+| xen   | boolean |
+| kvm   | boolean |
+
+#### Output (list)
+
+| Field    | Type    |
+| -------- | ------- |
+| iskvm    | boolean |
+| kernelid | number  |
+| label    | string  |
+| ispvops  | boolean |
+| isxen    | boolean |
+
 ### avail.linodeplans()
 
 ```python
-avail.linodeplans()
+avail.linodeplans(plan_id=None)
 ```
 
 External references:
 * [Official API Docs: utility.avail.linodeplans](https://www.linode.com/api/utility/avail.linodeplans)
+
+#### Input
+
+| Field    | Type   |
+| -------- | ------ |
+| plan_id  | number |
+
+#### Output (list)
+
+| Field  | Type   |
+| ------ | ------ |
+| cores  | number |
+| xfer   | number |
+| price  | number |
+| planid | number |
+| label  | string |
+| disk   | number |
+| ram    | number |
+| hourly | number |
+
+TODO: missing avail field
 
 ### avail.nodebalancers()
 
@@ -713,11 +776,45 @@ avail.nodebalancers()
 External references:
 * [Official API Docs: utility.avail.nodebalancers](https://www.linode.com/api/utility/avail.nodebalancers)
 
+#### Output (list)
+
+| Field       | Type   |
+| ----------- | ------ |
+| connections | number |
+| monthly     | number |
+| hourly      | number |
+
 ### avail.stackscripts()
 
 ```python
-avail.stackscripts()
+avail.stackscripts(distribution_id=None, vendor=None, keywords=None)
 ```
 
 External references:
 * [Official API Docs: utility.avail.stackscripts](https://www.linode.com/api/utility/avail.stackscripts)
+
+#### Input
+
+| Field           | Type   |
+| --------------- | ------ |
+| distribution_id | number |
+| vendor          | string |
+| keywords        | string |
+
+#### Output (list)
+
+| Field              | Type          |
+| ------------------ | ------------- |
+| rev_note           | string        |
+| distributionidlist | number (list) |
+| rev_dt             | string        |
+| create_dt          | string        |
+| script             | string        |
+| deploymentstotal   | number        |
+| description        | string        |
+| deploymentsactive  | number        |
+| ispublic           | boolean       |
+| stackscriptid      | number        |
+| userid             | number        |
+| label              | string        |
+| latestrev          | number        |

@@ -2,7 +2,7 @@ import json
 import os
 import types
 
-from unrequests import requests
+import requests
 
 api_key = os.environ["LINODE_APIV3_KEY"]
 
@@ -29,7 +29,7 @@ def request(action, data=None):
         "api_action": action,
     })
 
-    response = requests.get("https://api.linode.com/", data)
+    response = requests.get("https://api.linode.com/", params=data)
 
     formatted_response = format_response(response.json())
 
@@ -430,20 +430,39 @@ avail = module('avail')
 def avail_datacenters():
     return request("avail.datacenters")
 
-def avail_distributions():
-    return request("avail.distributions")
+def avail_distributions(distribution_id=None):
+    data = {"DistributionID": distribution_id} if distribution_id else {}
+    return request("avail.distributions", data)
 
-def avail_kernels():
-    return request("avail.kernels")
+def avail_kernels(xen=None, kvm=None):
+    data = {}
+    if xen is not None:
+        data["isXen"] = xen
 
-def avail_linodeplans():
-    return request("avail.linodeplans")
+    if kvm is not None:
+        data["isKVM"] = kvm
+
+    return request("avail.kernels", data)
+
+def avail_linodeplans(plan_id=None):
+    data = {"PlanID": plan_id} if plan_id else None
+    return request("avail.linodeplans", data)
 
 def avail_nodebalancers():
     return request("avail.nodebalancers")
 
-def avail_stackscripts():
-    return request("avail.stackscripts")
+def avail_stackscripts(distribution_id=None, vendor=None, keywords=None):
+    data = {}
+    if distribution_id:
+        data["DistributionID"] = distribution_id
+
+    if vendor:
+        data["DistributionVendor"] = vendor
+
+    if keywords:
+        data["keywords"] = keywords
+
+    return request("avail.stackscripts", data)
 
 avail.datacenters = avail_datacenters
 avail.distributions = avail_distributions
