@@ -691,14 +691,14 @@ External references:
 avail.distributions(distribution_id=None)
 ```
 
+External references:
+* [Official API Docs: utility.avail.distributions](https://www.linode.com/api/utility/avail.distributions)
+
 #### Input
 
 | Field           | Type   |
 | --------------- | ------ |
 | distribution_id | number |
-
-External references:
-* [Official API Docs: utility.avail.distributions](https://www.linode.com/api/utility/avail.distributions)
 
 #### Output (list)
 
