@@ -320,11 +320,156 @@ linode.view(linode_id=None)
 
 ### linode.config.create()
 
+```python
+linode.config.create(linode_id, kernel_id, label, disks, comments=None,
+                     ram_limit=None, virt_mode=None, run_level=None,
+                     root_device=None, helpers=None, automount_devtmpfs=None)
+```
+
+#### Input
+
+| Key                | Type       |
+| -------------------| ---------- |
+| linode_id          | number     |
+| kernel_id          | number     |
+| label              | string     |
+| comments           | string     |
+| ram_limit          | number     |
+| virt_mode          | string     |
+| run_level          | string     |
+| root_device        | RootDevice |
+| helpers            | Helpers    |
+| automount_devtmpfs | boolean    |
+
+##### RootDevice
+
+| Key       | Type    |
+| --------- | ------- |
+| number    | number  |
+| custom    | string  |
+| read_only | boolean |
+
+##### Helpers
+
+| Key               | Type    |
+| ----------------- | ------- |
+| disable_update_db | boolean |
+| distro            | boolean |
+| xen               | boolean |
+| depmod            | boolean |
+| network           | boolean |
+
+#### Output
+
+| Key       | Type   |
+| --------- | ------ |
+| configid  | number |
+
 ### linode.config.delete()
+
+```python
+linode.delete(linode_id, config_id)
+```
+
+#### Input
+
+| Key       | Type   |
+| --------- | ------ |
+| linode_id | number |
+| config_id | number |
+
+#### Output
+
+| Key       | Type   |
+| --------- | ------ |
+| configid  | number |
 
 ### linode.config.update()
 
+```python
+linode.config.update(linode_id, config_id, kernel_id, label, disks,
+                     comments=None, ram_limit=None, virt_mode=None,
+                     run_level=None, root_device=None, helpers=None,
+                     automount_devtmpfs=None)
+```
+
+#### Input
+
+| Key                | Type       |
+| -------------------| ---------- |
+| linode_id          | number     |
+| config_id          | number     |
+| kernel_id          | number     |
+| label              | string     |
+| comments           | string     |
+| ram_limit          | number     |
+| virt_mode          | string     |
+| run_level          | string     |
+| root_device        | RootDevice |
+| helpers            | Helpers    |
+| automount_devtmpfs | boolean    |
+
+##### RootDevice
+
+| Key       | Type    |
+| --------- | ------- |
+| number    | number  |
+| custom    | string  |
+| read_only | boolean |
+
+##### Helpers
+
+| Key               | Type    |
+| ----------------- | ------- |
+| disable_update_db | boolean |
+| distro            | boolean |
+| xen               | boolean |
+| depmod            | boolean |
+| network           | boolean |
+
+#### Output
+
+| Key       | Type   |
+| --------- | ------ |
+| configid  | number |
+
 ### linode.config.view()
+
+```python
+linode.config.view(linode_id, config_id=None)
+```
+
+#### Input
+
+| Key       | Type   |
+| --------- | ------ |
+| linode_id | number |
+| config_id | number |
+
+#### Output (list)
+
+| Key                    | Type          |
+| ---------------------- | ------------- |
+| rootdevicenum          | number        |
+| rootdevicecustom       | string        |
+| runlevel               | string        |
+| helper_xen             | number        |
+| virt_mode              | number        |
+| disklist               | number (list) |
+| isrescue               | boolean       |
+| kernelid               | number        |
+| helper_network         | number        |
+| linodeid               | number        |
+| comments               | string        |
+| configid               | number        |
+| helper_libtls          | number        |
+| rootdevicero           | boolean       |
+| devtmpfs_automount     | boolean       | 
+| helper_disableupdatedb | number        |
+| helper_depmod          | number        |
+| ramlimit               | number        |
+| label                  | string        |
+| helper_distro          | number        |
 
 ## linode.disk
 

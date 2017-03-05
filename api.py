@@ -1,3 +1,4 @@
+import json
 import os
 import types
 
@@ -11,7 +12,7 @@ def format_response(d):
     formatted_response = type("", (object,), {})()
     for key, value in d.items():
         if isinstance(value, list):
-            setattr(formatted_response, key.lower(), list(map(format_response, value)))
+            setattr(formatted_response, key.lower(), [format_response(v) for v in value])
         elif isinstance(value, dict):
             setattr(formatted_response, key.lower(), format_response(value))
         else:
@@ -35,7 +36,7 @@ def request(action, data=None):
     if not formatted_response.errorarray:
         return formatted_response.data
 
-    raise formatted_response.errorarray
+    raise Exception([vars(e) for e in formatted_response.errorarray])
 
 linode = module("linode")
 
@@ -199,8 +200,8 @@ def linode_config_create(linode_id, kernel_id, label, disks, comments=None,
             data["RootDeviceNum"] = root_device["number"]
         if root_device.get("custom"):
             data["RootDeviceCustom"] = root_device["custom"]
-        if root_device.get("readonly") is not None:
-            data["RootDeviceRO"] = root_device["readonly"]
+        if root_device.get("read_only") is not None:
+            data["RootDeviceRO"] = root_device["read_only"]
 
     if helpers:
         if helpers.get("disable_update_db") is not None:
@@ -233,7 +234,7 @@ def linode_config_view(linode_id, config_id=None):
     data = {"LinodeID": linode_id}
     if config_id:
         data["ConfigID"] = config_id
-    return request("linode.config.view", data)
+    return request("linode.config.list", data)
 
 linode.config.create = linode_config_create
 linode.config.delete = linode_config_delete
