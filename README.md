@@ -671,53 +671,53 @@ External references:
 ### avail.datacenters()
 
 ```python
-linode.avail.datacenters()
+avail.datacenters()
 ```
 
 External references:
-* [Official API Docs: linode.avail.datacenters](https://www.linode.com/api/linode/linode.avail.datacenters)
+* [Official API Docs: utility.avail.datacenters](https://www.linode.com/api/utility/avail.datacenters)
 
 ### avail.distributions()
 
 ```python
-linode.avail.distributions()
+avail.distributions()
 ```
 
 External references:
-* [Official API Docs: linode.avail.distributions](https://www.linode.com/api/linode/linode.avail.distributions)
+* [Official API Docs: utility.avail.distributions](https://www.linode.com/api/utility/avail.distributions)
 
 ### avail.kernels()
 
 ```python
-linode.avail.kernels()
+avail.kernels()
 ```
 
 External references:
-* [Official API Docs: linode.avail.kernels](https://www.linode.com/api/linode/linode.avail.kernels)
+* [Official API Docs: utility.avail.kernels](https://www.linode.com/api/utility/avail.kernels)
 
 ### avail.linodeplans()
 
 ```python
-linode.avail.linodeplans()
+avail.linodeplans()
 ```
 
 External references:
-* [Official API Docs: linode.avail.linodeplans](https://www.linode.com/api/linode/linode.avail.linodeplans)
+* [Official API Docs: utility.avail.linodeplans](https://www.linode.com/api/utility/avail.linodeplans)
 
 ### avail.nodebalancers()
 
 ```python
-linode.avail.nodebalancers()
+avail.nodebalancers()
 ```
 
 External references:
-* [Official API Docs: linode.avail.nodebalancers](https://www.linode.com/api/linode/linode.avail.nodebalancers)
+* [Official API Docs: utility.avail.nodebalancers](https://www.linode.com/api/utility/avail.nodebalancers)
 
 ### avail.stackscripts()
 
 ```python
-linode.avail.stackscripts()
+avail.stackscripts()
 ```
 
 External references:
-* [Official API Docs: linode.avail.stackscripts](https://www.linode.com/api/linode/linode.avail.stackscripts)
+* [Official API Docs: utility.avail.stackscripts](https://www.linode.com/api/utility/avail.stackscripts)
