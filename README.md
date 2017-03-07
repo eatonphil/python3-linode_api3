@@ -12,7 +12,7 @@ $ pip3 install -e .
 
 **Example**
 
-```python
+```bash
 $ LINODE_APIV3_KEY=$(cat ~/.linode_v3.token) python3
 >>> from api import linode
 >>> for l in linode.view():
