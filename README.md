@@ -1,12 +1,24 @@
 This is a Linode APIv3 client for Python 3.
 
-```python
-from api import linode
+**Installing**
 
-for l in linode.view():
-    print(l.label)
-    for d in linode.disk.view(l.linodeid):
-        print('\t', d.disk)
+There is no pip package yet. For now, clone this repository and install it manually:
+
+```bash
+$ git clone https://github.com/eatonphil/python-linode-apiv3
+$ cd python-linode-apiv3
+$ pip3 install -e .
+```
+
+**Example**
+
+```python
+$ LINODE_APIV3_KEY=$(cat ~/.linode_v3.token) python3
+>>> from api import linode
+>>> for l in linode.view():
+>>>    print(l.label)
+>>>    for d in linode.disk.view(l.linodeid):
+>>>        print('\t', d.disk)
 ```
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->

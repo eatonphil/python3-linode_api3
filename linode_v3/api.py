@@ -177,7 +177,7 @@ def linode_config_create(linode_id, kernel_id, label, disks, comments=None,
         "LinodeID": linode_id,
         "KernelID": kernel_id,
         "Label": label,
-        "DiskList": disks.join(",")
+        "DiskList": ",".join([str(d) for d in disks]),
     }
 
     if config_id:
