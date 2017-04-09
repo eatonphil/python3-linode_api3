@@ -5,7 +5,7 @@ This is a Linode APIv3 client for Python 3.
 **From PyPi**
 
 ```bash
-$ pip install linode-api3
+$ pip3 install linode-api3
 ```
 
 **From git**
