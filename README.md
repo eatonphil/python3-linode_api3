@@ -16,7 +16,7 @@ $ cd python-linode-apiv3
 $ pip3 install -e .
 ```
 
-**Example**
+### Example
 
 ```bash
 $ LINODE_APIV3_KEY=$(cat ~/.linode_v3.token) python3
@@ -29,7 +29,7 @@ $ LINODE_APIV3_KEY=$(cat ~/.linode_v3.token) python3
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Modules and Functions**
+### Modules and Functions
 
 - [linode](#linode)
   - [linode.boot()](#linodeboot)
