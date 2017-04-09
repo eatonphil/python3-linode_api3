@@ -2,13 +2,13 @@
 
 from setuptools import setup
 
-setup(name='linode-api3',
+setup(name='linode_api3',
       version='0.1',
       description='Linode APIv3 client for Python3',
       author='Phil Eaton',
-      url='https://github.com/eatonphil/python3-linode-api3',
+      url='https://github.com/eatonphil/python3-linode_api3',
       install_requires=['requests'],
-      packages=['linode-api3'],
+      packages=['linode_api3'],
       classifiers=[
           'Development Status :: 3 - Alpha',
           'Environment :: Console',

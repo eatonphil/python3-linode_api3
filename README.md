@@ -5,14 +5,14 @@ This is a Linode APIv3 client for Python 3.
 **From PyPi**
 
 ```bash
-$ pip3 install linode-api3
+$ pip3 install linode_api3
 ```
 
 **From git**
 
 ```bash
-$ git clone https://github.com/eatonphil/python-linode-apiv3
-$ cd python-linode-apiv3
+$ git clone https://github.com/eatonphil/python-linode_apiv3
+$ cd python-linode_apiv3
 $ pip3 install -e .
 ```
 
@@ -20,7 +20,7 @@ $ pip3 install -e .
 
 ```bash
 $ LINODE_APIV3_KEY=$(cat ~/.linode_v3.token) python3
->>> from api import linode
+>>> from linode_api3 import linode
 >>> for l in linode.view():
 >>>    print(l.label)
 >>>    for d in linode.disk.view(l.linodeid):
