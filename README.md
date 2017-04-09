@@ -2,7 +2,13 @@ This is a Linode APIv3 client for Python 3.
 
 **Installing**
 
-There is no pip package yet. For now, clone this repository and install it manually:
+### From PyPi
+
+```bash
+$ pip install linode-api3
+```
+
+### From git
 
 ```bash
 $ git clone https://github.com/eatonphil/python-linode-apiv3
