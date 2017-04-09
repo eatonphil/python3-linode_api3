@@ -1,14 +1,14 @@
 This is a Linode APIv3 client for Python 3.
 
-**Installing**
+### Installing
 
-### From PyPi
+**From PyPi**
 
 ```bash
 $ pip install linode-api3
 ```
 
-### From git
+**From git**
 
 ```bash
 $ git clone https://github.com/eatonphil/python-linode-apiv3
