@@ -21,6 +21,7 @@ $ pip3 install -e .
 ```bash
 $ LINODE_APIV3_KEY=$(cat ~/.linode_v3.token) python3
 >>> from linode_api3 import linode
+>>> # or if you don't want to set an environment variable: from linode_api3 import init; init(LINODE_APIV3_KEY)
 >>> for l in linode.view():
 >>>    print(l.label)
 >>>    for d in linode.disk.view(l.linodeid):

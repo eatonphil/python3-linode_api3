@@ -4,9 +4,13 @@ import types
 
 import requests
 
-api_key = os.environ["LINODE_APIV3_KEY"]
+API_KEY = os.environ.get("LINODE_APIV3_KEY")
 
 def module(name): return types.ModuleType(name)
+
+def init(api_key):
+    global API_KEY
+    API_KEY = api_key
 
 def format_response(d):
     formatted_response = type("", (object,), {})()
@@ -25,7 +29,7 @@ def request(action, data=None):
         data = {}
 
     data.update({
-        "api_key": api_key,
+        "api_key": API_KEY,
         "api_action": action,
     })
 
