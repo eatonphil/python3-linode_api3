@@ -138,9 +138,10 @@ def linode_view(linode_id=None):
     data = { "LinodeID": linode_id } if linode_id else None
     return request("linode.list", data)
 
-def linode_delete(linode_id):
+def linode_delete(linode_id, skip_checks=False):
     return request("linode.delete", {
-        "LinodeID": linode_id
+        "LinodeID": linode_id,
+        "skipChecks": skip_checks,
     })
 
 def linode_kvmify(linode_id):
